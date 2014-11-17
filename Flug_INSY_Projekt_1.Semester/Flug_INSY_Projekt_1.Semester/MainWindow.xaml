@@ -1,0 +1,19 @@
+﻿<Window x:Class="Flug_INSY_Projekt_1.Semester.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Personal" Height="350" Width="525">
+    <Grid Height="341">
+        <Menu Height="32" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="522">
+            <MenuItem Header="Datei">
+                <MenuItem Header="Connect" Click="MenuItem_Click" />
+                <MenuItem Header="Disconnect" Click="MenuItem_Click_1" />
+                <Separator></Separator>
+                <MenuItem Header="Exit" Click="MenuItem_Click_2" />
+            </MenuItem>
+            <MenuItem Header="Bearbeiten">
+                <MenuItem Header="Delete" x:Name="menudelete" Click="menudelete_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="About" ></MenuItem>
+        </Menu>
+    </Grid>
+</Window>
