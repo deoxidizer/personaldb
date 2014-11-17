@@ -21,14 +21,27 @@ namespace Flug_INSY_Projekt_1.Semester
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<PersonalundBerechtigung> Eintraege = new ObservableCollection<PersonalundBerechtigung>();
+        MySqlConnection conn;
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MenuConnect_Click(object sender, RoutedEventArgs e)
         {
-
+            string connStr = "Server=84.115.51.33;Database=4AHIT;Uid=4AHIT;Pwd=4AHIT_klasse_INSY_1337";
+            conn = new MySqlConnection(connStr);
+            try
+            {
+                conn.Open();
+                laden();
+            }
+            catch (Exception s)
+            {
+                MessageBox.Show("Connection Error\r\n" + s.ToString());
+            }
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
