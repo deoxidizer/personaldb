@@ -5,8 +5,8 @@
     <Grid Height="341">
         <Menu Height="32" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="522">
             <MenuItem Header="Datei">
-                <MenuItem Header="Connect" Click="MenuItem_Click" />
-                <MenuItem Header="Disconnect" Click="MenuItem_Click_1" />
+                <MenuItem Header="Connect" Click="MenuConnect_Click" />
+                <MenuItem Header="Disconnect" Click="MenuDisconnect_Click" />
                 <Separator></Separator>
                 <MenuItem Header="Exit" Click="MenuItem_Click_2" />
             </MenuItem>
