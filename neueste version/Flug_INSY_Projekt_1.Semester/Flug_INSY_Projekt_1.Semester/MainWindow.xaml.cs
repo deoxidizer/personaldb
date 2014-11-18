@@ -56,9 +56,47 @@ namespace Flug_INSY_Projekt_1.Semester
 
         private void menudelete_Click(object sender, RoutedEventArgs e)
         {
+            PersonalundBerechtigung selectedPersonalundBerechtigung = dataPersonalundBerechtigung.SelectedItem as PersonalundBerechtigung;
+
+            string SQLCommand = string.Format("DELETE from freunde WHERE PersID='{0}'", selectedPersonalundBerechtigung.id);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(SQLCommand, conn);
+                cmd.ExecuteNonQuery();
+                laden();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Delete crashed" + ex.Message);
+            }
+        }
+
+        private void dataPersonalundBerechtigung_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
 
-        
+        private void dataPersonalundBerechtigung_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        public class PersonalundBerechtigung
+        {
+            public int PersID { get; set; }
+            public string Geschlecht { get; set; }
+            public string Rolle { get; set; }
+            public string Vorname { get; set; }
+            public string Nachname { get; set; }
+            public string Geburtstagsdatum { get; set; }
+            public string Adresse { get; set; }
+            public string Telefonnummer { get; set; }
+            //------------------------------------------
+            public int BID { get; set; }
+            public string darfarbeitin { get; set;}
+            public string Ausbildung { get; set; }
+
+        }
     }
 }

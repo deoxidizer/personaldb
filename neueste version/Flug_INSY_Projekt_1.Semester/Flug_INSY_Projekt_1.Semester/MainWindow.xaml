@@ -15,5 +15,8 @@
             </MenuItem>
             <MenuItem Header="About" ></MenuItem>
         </Menu>
+        <DataGrid Name="dataPersonalundBerechtigung" IsReadOnly="True" MouseDoubleClick="dataPersonalundBerechtigung_MouseDoubleClick" SelectionChanged="dataPersonalundBerechtigung_SelectionChanged">
+
+        </DataGrid>
     </Grid>
 </Window>
