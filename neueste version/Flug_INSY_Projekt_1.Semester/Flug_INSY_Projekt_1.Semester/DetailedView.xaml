@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Flug_INSY_Projekt_1.Semester.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="348.175" Width="300" Title="Ausfühlformular">
-    <Grid Margin="0,0,2,0">
+    <Grid x:Name="detailgrid" Margin="0,0,2,0">
         <Label Content="Geschlecht" HorizontalAlignment="Left" Margin="20,47,0,0" VerticalAlignment="Top" Width="80"/>
         <ComboBox x:Name="ComboGeschlecht" HorizontalAlignment="Left" Margin="141,51,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Geburtsdatum" HorizontalAlignment="Left" Margin="20,170,0,0" VerticalAlignment="Top" Width="90"/>

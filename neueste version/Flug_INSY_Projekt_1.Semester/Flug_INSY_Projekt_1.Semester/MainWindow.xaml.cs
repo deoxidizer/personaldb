@@ -43,6 +43,40 @@ namespace Flug_INSY_Projekt_1.Semester
                 MessageBox.Show("Connection Error\r\n" + s.ToString());
             }
         }
+            
+        private void laden()
+        {
+            try
+            {
+                Eintraege = new ObservableCollection<PersonalundBerechtigung>();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Personal join Berechtigung USING(PersID)", conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    PersonalundBerechtigung Eintrag = new PersonalundBerechtigung();
+                    Eintrag.PersID = rdr.GetInt16(0);
+                    Eintrag.Geschlecht = rdr.GetString(1);
+                    Eintrag.Rolle = rdr.GetString(2);
+                    Eintrag.Vorname = rdr.GetString(3);
+                    Eintrag.Nachname = rdr.GetString(4);
+                    Eintrag.Geburtstagsdatum = rdr.GetString(5);
+                    Eintrag.Adresse = rdr.GetString(6);
+                    Eintrag.Telefonnummer = rdr.GetString(7);
+                    Eintrag.BID = rdr.GetInt16(8);
+                    Eintrag.darfarbeitin = rdr.GetString(9);
+                    Eintrag.Ausbildung = rdr.GetString(10);
+                    
+                    Eintraege.Add(Eintrag);
+                }
+                detailgrid.ItemsSource = Eintraege;
+                rdr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An Error occured:\r\n" + ex.Message);
+            }
+
+        }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
