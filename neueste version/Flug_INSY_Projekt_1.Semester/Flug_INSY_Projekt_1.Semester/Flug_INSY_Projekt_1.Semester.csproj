@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DetailedView.cs" />
     <Compile Include="DetailedView.xaml.cs">
       <DependentUpon>DetailedView.xaml</DependentUpon>
     </Compile>

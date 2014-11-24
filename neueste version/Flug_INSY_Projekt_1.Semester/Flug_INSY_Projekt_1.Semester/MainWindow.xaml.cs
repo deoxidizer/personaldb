@@ -29,9 +29,14 @@ namespace Flug_INSY_Projekt_1.Semester
             InitializeComponent();
         }
 
+        private void MenuExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void MenuConnect_Click(object sender, RoutedEventArgs e)
         {
-            string connStr = "Server=84.115.51.33;Database=4AHIT;Uid=4AHIT;Pwd=4AHIT_klasse_INSY_1337";
+            string connStr = "Server=84.115.51.33;Database=4AHIT;Uid=root;Pwd=INSY_htl14-leszko_4ahitn";
             conn = new MySqlConnection(connStr);
             try
             {
@@ -78,21 +83,11 @@ namespace Flug_INSY_Projekt_1.Semester
 
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void Menu_Delete_Click(object sender, RoutedEventArgs e)
         {
+            PersonalundBerechtigung selectedPersonalundBerechtigung = detailgrid.SelectedItem as PersonalundBerechtigung;
 
-        }
-
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void menudelete_Click(object sender, RoutedEventArgs e)
-        {
-            PersonalundBerechtigung selectedPersonalundBerechtigung = dataPersonalundBerechtigung.SelectedItem as PersonalundBerechtigung;
-
-            string SQLCommand = string.Format("DELETE from freunde WHERE PersID='{0}'", selectedPersonalundBerechtigung.id);
+            string SQLCommand = string.Format("DELETE from 4AHITN WHERE PersID='{0}'", selectedPersonalundBerechtigung.PersID);
             try
             {
                 MySqlCommand cmd = new MySqlCommand(SQLCommand, conn);
@@ -101,19 +96,39 @@ namespace Flug_INSY_Projekt_1.Semester
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Delete crashed" + ex.Message);
             }
         }
 
-        private void dataPersonalundBerechtigung_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Menu_Insert_Click(object sender, RoutedEventArgs e)
         {
-
+           detailedview Detailview = new detailedview();
+           Detailview.ShowDialog();
+           if (Detailview.DialogResult == true)
+           {
+                    
+                    try
+                    {
+                        //umschreiben
+                        //----------------------
+                        //string SQLCommand = string.Format("INSERT INTO interpret VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}');", Detailview.TextboxID.Text, Detailview.TextboxInterpret.Text, Detailview.ComboboxTyp.Text, Detailview.TextboxDate.Text, Detailview.ComboboxGenre.Text, Detailview.TextboxLand.Text, Detailview.ComboboxLabel.Text);
+                        //MySqlCommand cmd = new MySqlCommand(SQLCommand, conn);
+                        //cmd.ExecuteNonQuery();
+                        //string SQLCommand2 = string.Format("INSERT INTO aufnahmen VALUES('{0}','{1}','{2}','{3}');", Detailview.TextboxISRC.Text, Detailview.TextboxName.Text, Detailview.TextboxLänge.Text, Detailview.TextboxID.Text);
+                        //MySqlCommand cmd2= new MySqlCommand(SQLCommand2, conn);
+                        //cmd2.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An Error occured:\r\n" + ex.Message);
+                    }
+                    laden();
+           }
         }
 
-        private void dataPersonalundBerechtigung_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void Menu_About_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("PersonalDB v0.9 \nProgramm zum Anzeigen der Personaldaten ihres Flugzeugpersonals \nEntwickelt von Kevin Deo, Baris Senkal und Alexander Tomasiak\r\n");
         }
 
         public class PersonalundBerechtigung
