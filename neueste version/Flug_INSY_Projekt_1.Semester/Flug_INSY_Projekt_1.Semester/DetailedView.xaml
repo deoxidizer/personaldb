@@ -10,10 +10,10 @@
         <Label Content="Geschlecht" HorizontalAlignment="Left" Margin="20,47,0,0" VerticalAlignment="Top" Width="80"/>
         <ComboBox x:Name="ComboGeschlecht" HorizontalAlignment="Left" Margin="32.5,51,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Label Content="Geburtsdatum" HorizontalAlignment="Left" Margin="20,170,0,0" VerticalAlignment="Top" Width="90" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="TextBoxGeburtsdatum" HorizontalAlignment="Left" Height="23" Margin="32.5,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1" Grid.Column="1"/>
-        <TextBox x:Name="TextBoxVorname" HorizontalAlignment="Left" Height="23" Margin="32.5,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_2" Grid.Column="1"/>
+        <TextBox x:Name="TextBoxGeburtsdatum" HorizontalAlignment="Left" Height="23" Margin="32.5,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox x:Name="TextBoxVorname" HorizontalAlignment="Left" Height="23" Margin="32.5,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Label Content="Vorname" HorizontalAlignment="Left" Margin="20,108,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxNachname" HorizontalAlignment="Left" Height="23" Margin="32.5,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_2" Grid.Column="1"/>
+        <TextBox x:Name="TextBoxNachname" HorizontalAlignment="Left" Height="23" Margin="32.5,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Label Content="Nachname" HorizontalAlignment="Left" Margin="20,139,0,0" VerticalAlignment="Top"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="35"/>
         <TextBox x:Name="TextBoxID" HorizontalAlignment="Left" Height="23" Margin="32.5,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
@@ -26,11 +26,11 @@
         <Button x:Name="UPDATE" Content="UPDATE" HorizontalAlignment="Left" Margin="83,244,0,0" VerticalAlignment="Top" Width="92" Height="31" Click="UPDATE_Click" Grid.Column="1"/>
         <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="219,244,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="Cancel_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Label Content="Berechtigungs ID" HorizontalAlignment="Left" Margin="220,81,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="BID" HorizontalAlignment="Left" Height="23" Margin="69,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <TextBox x:Name="TextBoxBID" HorizontalAlignment="Left" Height="23" Margin="69,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
         <Label Content="Ausbildung" HorizontalAlignment="Left" Margin="220,111,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Ausbildung" HorizontalAlignment="Left" Height="23" Margin="69,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <TextBox x:Name="TextBoxAusbildung" HorizontalAlignment="Left" Height="23" Margin="69,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
         <Label Content="Darf arbeiten in:" HorizontalAlignment="Left" Margin="219,142,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Height="61" Margin="69,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <TextBox x:Name="TextBoxBer" HorizontalAlignment="Left" Height="61" Margin="69,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
 
     </Grid>
 </Window>

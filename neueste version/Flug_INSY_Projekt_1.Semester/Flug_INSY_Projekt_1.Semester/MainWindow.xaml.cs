@@ -82,6 +82,40 @@ namespace Flug_INSY_Projekt_1.Semester
             }
 
         }
+        private void detailgrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                PersonalundBerechtigung selectedEintrag = (PersonalundBerechtigung)detailgrid.SelectedItem;
+                detailedview Detailview = new detailedview(selectedEintrag, conn);
+                Detailview.ShowDialog();
+                if (Detailview.DialogResult == true)
+                {
+                    string SQLCommand1 = string.Format("UPDATE Personal SET PersID='{0}',Geschlecht='{1}',Rolle='{2}',Vorname='{3}',Nachname='{4}',Geburtstagsdatum='{5}',Adresse='{6}',Telefonnummer='{7}' WHERE id='{8}'", Detailview.TextBoxID.Text, Detailview.ComboGeschlecht.Text, Detailview.ComboRolle.Text, Detailview.TextBoxVorname.Text, Detailview.TextBoxNachname.Text, Detailview.TextBoxGeburtsdatum.Text, Detailview.TextBoxAdresse.Text, Detailview.TextBoxTel, selectedEintrag.PersID);
+                    MySqlCommand cmd1 = new MySqlCommand(SQLCommand1, conn);
+                    cmd1.ExecuteNonQuery();
+                    //string SQLCommand2 = string.Format("UPDATE Berechtigung SET ISRC='{0}',Name='{1}',Länge='{2}' WHERE ISRC='{3}'", Detailview.TextboxISRC.Text, Detailview.TextboxName.Text, Detailview.TextboxLänge.Text, selectedEintrag.ISRC);
+                    //MySqlCommand cmd2 = new MySqlCommand(SQLCommand2, conn);
+                    //cmd2.ExecuteNonQuery();
+                    laden();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry something crashed: \r\n" + ex.Message);
+            }
+        }
+        private void detailgrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (detailgrid.SelectedItems.Count > 0)
+            {
+                Menu_Delete.IsEnabled = true;
+            }
+            else
+            {
+                Menu_Delete.IsEnabled = false;
+            }
+        }
 
         private void Menu_Delete_Click(object sender, RoutedEventArgs e)
         {
@@ -147,5 +181,7 @@ namespace Flug_INSY_Projekt_1.Semester
             public string Ausbildung { get; set; }
 
         }
+
+
     }
 }

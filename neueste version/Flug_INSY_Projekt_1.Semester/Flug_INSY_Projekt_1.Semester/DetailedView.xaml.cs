@@ -29,16 +29,17 @@ namespace Flug_INSY_Projekt_1.Semester
         {
             InitializeComponent();
             comboenumtyp();
-            //TextboxID.Text = selectedEintrag.ID.ToString();
-            //TextboxInterpret.Text = selectedEintrag.Interpretname.ToString();
-            //ComboboxTyp.Text = selectedEintrag.Typ.ToString();
-            //TextboxDate.Text = selectedEintrag.Gründungsdatum.ToString();
-            //ComboboxGenre.Text = selectedEintrag.Genre.ToString();
-            //TextboxLand.Text = selectedEintrag.Land.ToString();
-            //ComboboxLabel.Text = selectedEintrag.Label.ToString();
-            //TextboxISRC.Text = selectedEintrag.ISRC.ToString();
-            //TextboxName.Text = selectedEintrag.Name.ToString();
-            //TextboxLänge.Text = selectedEintrag.Länge.ToString();
+            TextBoxID.Text = selectedEintrag.PersID.ToString();
+            ComboGeschlecht.Text = selectedEintrag.Geschlecht.ToString();
+            ComboRolle.Text = selectedEintrag.Rolle.ToString();
+            TextBoxVorname.Text = selectedEintrag.Vorname.ToString();
+            TextBoxNachname.Text = selectedEintrag.Nachname.ToString();
+            TextBoxGeburtsdatum.Text = selectedEintrag.Geburtstagsdatum.ToString();
+            TextBoxAdresse.Text = selectedEintrag.Adresse.ToString();
+            TextBoxTel.Text = selectedEintrag.Telefonnummer.ToString();
+            TextBoxBID.Text = selectedEintrag.BID.ToString();
+            TextBoxAusbildung.Text = selectedEintrag.Ausbildung.ToString();
+            TextBoxBer.Text = selectedEintrag.darfarbeitin.ToString();
         }
 
         private void comboenumtyp()
