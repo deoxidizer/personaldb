@@ -54,23 +54,24 @@ namespace Flug_INSY_Projekt_1.Semester
             try
             {
                 Eintraege = new ObservableCollection<PersonalundBerechtigung>();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Personal join Berechtigung USING(PersID)", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Personal join Berechtigung ON PersID = BID", conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
                     PersonalundBerechtigung Eintrag = new PersonalundBerechtigung();
-                    Eintrag.PersID = rdr.GetInt16(0);
-                    Eintrag.Geschlecht = rdr.GetString(1);
-                    Eintrag.Rolle = rdr.GetString(2);
-                    Eintrag.Vorname = rdr.GetString(3);
-                    Eintrag.Nachname = rdr.GetString(4);
-                    Eintrag.Geburtstagsdatum = rdr.GetString(5);
-                    Eintrag.Adresse = rdr.GetString(6);
-                    Eintrag.Telefonnummer = rdr.GetString(7);
-                    Eintrag.BID = rdr.GetInt16(8);
-                    Eintrag.darfarbeitin = rdr.GetString(9);
-                    Eintrag.Ausbildung = rdr.GetString(10);
-                    
+                    Eintrag.Geschlecht = rdr.GetString(0);
+                    Eintrag.GeburtsDatum = rdr.GetString(1);
+                    Eintrag.PVorname = rdr.GetString(2);
+                    Eintrag.PNachname = rdr.GetString(3);
+                    Eintrag.PersID = rdr.GetInt16(4);
+                    Eintrag.VerNr = rdr.GetString(5);
+                    Eintrag.PAdresse = rdr.GetString(6);
+                    Eintrag.PTelNr = rdr.GetString(7);
+                    Eintrag.Rolle = rdr.GetString(8);
+                    Eintrag.BID = rdr.GetInt16(9);
+                    Eintrag.darfarbeitin = rdr.GetString(10);
+                    Eintrag.Ausbildung = rdr.GetString(11);
+
                     Eintraege.Add(Eintrag);
                 }
                 detailgrid.ItemsSource = Eintraege;
@@ -167,14 +168,16 @@ namespace Flug_INSY_Projekt_1.Semester
 
         public class PersonalundBerechtigung
         {
+            
             public int PersID { get; set; }
             public string Geschlecht { get; set; }
             public string Rolle { get; set; }
-            public string Vorname { get; set; }
-            public string Nachname { get; set; }
-            public string Geburtstagsdatum { get; set; }
-            public string Adresse { get; set; }
-            public string Telefonnummer { get; set; }
+            public string PVorname { get; set; }
+            public string PNachname { get; set; }
+            public string GeburtsDatum { get; set; }
+            public string PAdresse { get; set; }
+            public string PTelNr { get; set; }
+            public string VerNr { get; set; }
             //------------------------------------------
             public int BID { get; set; }
             public string darfarbeitin { get; set;}

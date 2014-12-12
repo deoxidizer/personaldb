@@ -32,11 +32,11 @@ namespace Flug_INSY_Projekt_1.Semester
             TextBoxID.Text = selectedEintrag.PersID.ToString();
             ComboGeschlecht.Text = selectedEintrag.Geschlecht.ToString();
             ComboRolle.Text = selectedEintrag.Rolle.ToString();
-            TextBoxVorname.Text = selectedEintrag.Vorname.ToString();
-            TextBoxNachname.Text = selectedEintrag.Nachname.ToString();
-            TextBoxGeburtsdatum.Text = selectedEintrag.Geburtstagsdatum.ToString();
-            TextBoxAdresse.Text = selectedEintrag.Adresse.ToString();
-            TextBoxTel.Text = selectedEintrag.Telefonnummer.ToString();
+            TextBoxVorname.Text = selectedEintrag.PVorname.ToString();
+            TextBoxNachname.Text = selectedEintrag.PNachname.ToString();
+            TextBoxGeburtsdatum.Text = selectedEintrag.GeburtsDatum.ToString();
+            TextBoxAdresse.Text = selectedEintrag.PAdresse.ToString();
+            TextBoxTel.Text = selectedEintrag.PTelNr.ToString();
             TextBoxBID.Text = selectedEintrag.BID.ToString();
             TextBoxAusbildung.Text = selectedEintrag.Ausbildung.ToString();
             TextBoxBer.Text = selectedEintrag.darfarbeitin.ToString();
