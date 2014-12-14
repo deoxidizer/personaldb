@@ -120,19 +120,22 @@ namespace Flug_INSY_Projekt_1.Semester
 
         private void Menu_Delete_Click(object sender, RoutedEventArgs e)
         {
-            PersonalundBerechtigung selectedPersonalundBerechtigung = detailgrid.SelectedItem as PersonalundBerechtigung;
-
-            string SQLCommand = string.Format("DELETE from 4AHITN WHERE PersID='{0}'", selectedPersonalundBerechtigung.PersID);
             try
             {
-                MySqlCommand cmd = new MySqlCommand(SQLCommand, conn);
-                cmd.ExecuteNonQuery();
-                laden();
+                PersonalundBerechtigung selectedPersonalundBerechtigung = detailgrid.SelectedItem as PersonalundBerechtigung;
+                string SQLCommand5 = "DELETE FROM Personal WHERE PersID='" + selectedPersonalundBerechtigung.PersID + "';";
+                MySqlCommand cmd5 = new MySqlCommand(SQLCommand5, conn);
+                cmd5.ExecuteNonQuery();
+                string SQLCommand6 = "DELETE FROM Berechtigung WHERE BID=" + selectedPersonalundBerechtigung.BID + ";";
+                MySqlCommand cmd6 = new MySqlCommand(SQLCommand6, conn);
+                cmd6.ExecuteNonQuery();                
             }
+
             catch (Exception ex)
             {
-                MessageBox.Show("Delete crashed" + ex.Message);
+                MessageBox.Show("Delete crashed:\r\n" + ex.Message);
             }
+            laden();
         }
 
         private void Menu_Insert_Click(object sender, RoutedEventArgs e)
@@ -147,7 +150,7 @@ namespace Flug_INSY_Projekt_1.Semester
                         MySqlCommand cmd3 = new MySqlCommand(SQLCommand3, conn);
                         cmd3.ExecuteNonQuery();
 
-                        string SQLCommand4 = string.Format("INSERT INTO Berechtigung VALUES('{0}','{1}','{2}','{3}')", Detailview.TextBoxBID.Text, Detailview.Combodai.Text, Detailview.TextBoxAusbildung.Text);
+                        string SQLCommand4 = string.Format("INSERT INTO Berechtigung VALUES('{0}','{1}','{2}','{3}')", Detailview.TextBoxID.Text, Detailview.TextBoxBID.Text, Detailview.Combodai.Text, Detailview.TextBoxAusbildung.Text);
                         MySqlCommand cmd4 = new MySqlCommand(SQLCommand4, conn);
                         cmd4.ExecuteNonQuery();
                     }
