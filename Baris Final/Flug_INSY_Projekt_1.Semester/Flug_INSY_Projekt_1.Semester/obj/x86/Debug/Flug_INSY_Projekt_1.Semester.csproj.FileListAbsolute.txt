@@ -1,0 +1,13 @@
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\bin\Debug\Flug_INSY_Projekt_1.Semester.exe
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\bin\Debug\Flug_INSY_Projekt_1.Semester.pdb
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\MainWindow.baml
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\DetailedView.baml
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\DetailedView.g.cs
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\App.g.cs
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester_MarkupCompile.cache
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester.g.resources
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester.Properties.Resources.resources
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester.csproj.GenerateResource.Cache
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester.exe
+C:\Users\Baris\Desktop\Baris Final\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester.pdb

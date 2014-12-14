@@ -1,0 +1,37 @@
+﻿<Window x:Class="Flug_INSY_Projekt_1.Semester.detailedview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="330" Width="646" Title="Ausfühlformular">
+    <Grid x:Name="detailgrid" Margin="0,0,2,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="236*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Geschlecht" HorizontalAlignment="Left" Margin="20,47,0,0" VerticalAlignment="Top" Width="80"/>
+        <ComboBox x:Name="ComboGeschlecht" HorizontalAlignment="Left" Margin="32.5,51,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Geburtsdatum" HorizontalAlignment="Left" Margin="20,170,0,0" VerticalAlignment="Top" Width="90" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TextBoxGeburtsdatum" HorizontalAlignment="Left" Height="23" Margin="32.5,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox x:Name="TextBoxVorname" HorizontalAlignment="Left" Height="23" Margin="32.5,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Vorname" HorizontalAlignment="Left" Margin="20,108,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxNachname" HorizontalAlignment="Left" Height="23" Margin="32.5,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Nachname" HorizontalAlignment="Left" Margin="20,139,0,0" VerticalAlignment="Top"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="35"/>
+        <TextBox x:Name="TextBoxID" HorizontalAlignment="Left" Height="23" Margin="32.5,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Adresse" HorizontalAlignment="Left" Margin="220,20,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="TextBoxAdresse" HorizontalAlignment="Left" Height="23" Margin="69,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <Label Content="Rolle" HorizontalAlignment="Left" Margin="20,77,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboRolle" HorizontalAlignment="Left" Margin="32.5,81,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Telefonnummer" HorizontalAlignment="Left" Margin="220,51,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TextBoxTel" HorizontalAlignment="Left" Height="23" Margin="69,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <Button x:Name="UPDATE" Content="UPDATE" HorizontalAlignment="Left" Margin="97,245,0,0" VerticalAlignment="Top" Width="92" Height="31" Click="UPDATE_Click" Grid.Column="1"/>
+        <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="229,245,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="Cancel_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="Berechtigungs ID" HorizontalAlignment="Left" Margin="220,81,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TextBoxBID" HorizontalAlignment="Left" Height="23" Margin="69,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <Label Content="Ausbildung" HorizontalAlignment="Left" Margin="220,111,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TextBoxAusbildung" HorizontalAlignment="Left" Height="58" Margin="69,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <Label Content="Darf arbeiten in:" HorizontalAlignment="Left" Margin="220,170,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="Combodai" Grid.Column="2" HorizontalAlignment="Left" Margin="69,170,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="32,202,0,0" Name="Versicherung" VerticalAlignment="Top" Width="120" />
+        <Label Content="VerNr" Height="28" HorizontalAlignment="Left" Margin="49,197,0,0" Name="VerNr" VerticalAlignment="Top" />
+    </Grid>
+</Window>
