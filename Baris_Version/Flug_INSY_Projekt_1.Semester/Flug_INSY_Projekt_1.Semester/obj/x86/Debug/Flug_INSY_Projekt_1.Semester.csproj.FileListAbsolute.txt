@@ -22,3 +22,4 @@ C:\Users\Baris\Desktop\neueste version\Flug_INSY_Projekt_1.Semester\Flug_INSY_Pr
 C:\Users\Baris\Desktop\neueste version\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester.g.resources
 C:\Users\Baris\Desktop\neueste version\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester.Properties.Resources.resources
 C:\Users\Baris\Desktop\neueste version\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester.csproj.GenerateResource.Cache
+C:\Users\Deo\Desktop\GIT\personaldb\Baris_Version\Flug_INSY_Projekt_1.Semester\Flug_INSY_Projekt_1.Semester\obj\x86\Debug\Flug_INSY_Projekt_1.Semester.exe

@@ -36,7 +36,7 @@ namespace Flug_INSY_Projekt_1.Semester
 
         private void MenuConnect_Click(object sender, RoutedEventArgs e)
         {
-            string connStr = "Server=84.115.51.33;Database=4AHIT;Uid=root;Pwd=INSY_htl14-leszko_4ahitn";
+            string connStr = "Server=84.115.51.33;Database=4AHIT;Uid=root;Pwd=INSY_htl14-leszko_4ahitn;Convert Zero Datetime=True";
             conn = new MySqlConnection(connStr);
             try
             {
@@ -54,16 +54,16 @@ namespace Flug_INSY_Projekt_1.Semester
             try
             {
                 Eintraege = new ObservableCollection<PersonalundBerechtigung>();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Personal join Berechtigung ON PersID = BID", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Personal JOIN Berechtigung USING(PersID)", conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
                     PersonalundBerechtigung Eintrag = new PersonalundBerechtigung();
-                    Eintrag.Geschlecht = rdr.GetString(0);
-                    Eintrag.GeburtsDatum = rdr.GetString(1);
-                    Eintrag.PVorname = rdr.GetString(2);
-                    Eintrag.PNachname = rdr.GetString(3);
-                    Eintrag.PersID = rdr.GetInt16(4);
+                    Eintrag.PersID = rdr.GetInt16(0);
+                    Eintrag.Geschlecht = rdr.GetString(1);
+                    Eintrag.GeburtsDatum = rdr.GetString(2);
+                    Eintrag.PVorname = rdr.GetString(3);
+                    Eintrag.PNachname = rdr.GetString(4);  
                     Eintrag.VerNr = rdr.GetString(5);
                     Eintrag.PAdresse = rdr.GetString(6);
                     Eintrag.PTelNr = rdr.GetString(7);
@@ -92,12 +92,12 @@ namespace Flug_INSY_Projekt_1.Semester
                 Detailview.ShowDialog();
                 if (Detailview.DialogResult == true)
                 {
-                    string SQLCommand1 = string.Format("UPDATE Personal SET PersID='{0}',Geschlecht='{1}',Rolle='{2}',Vorname='{3}',Nachname='{4}',Geburtstagsdatum='{5}',Adresse='{6}',Telefonnummer='{7}' WHERE id='{8}'", Detailview.TextBoxID.Text, Detailview.ComboGeschlecht.Text, Detailview.ComboRolle.Text, Detailview.TextBoxVorname.Text, Detailview.TextBoxNachname.Text, Detailview.TextBoxGeburtsdatum.Text, Detailview.TextBoxAdresse.Text, Detailview.TextBoxTel, selectedEintrag.PersID);
+                    string SQLCommand1 = string.Format("UPDATE Personal SET Geschlecht='{0}',GeburtsDatum='{1}',PVorname='{2}',PNachname='{3}',PersID='{4}',VerNr='{5}',PAdresse='{6}',PTelNr='{7}',Rolle='{8}' WHERE PersID='{9}'", Detailview.ComboGeschlecht.Text, Detailview.TextBoxGeburtsdatum.Text, Detailview.TextBoxVorname.Text, Detailview.TextBoxNachname.Text, Detailview.TextBoxID.Text, Detailview.TextBoxVerNr.Text, Detailview.TextBoxAdresse.Text, Detailview.TextBoxTel.Text, Detailview.ComboRolle.Text, selectedEintrag.PersID);
                     MySqlCommand cmd1 = new MySqlCommand(SQLCommand1, conn);
                     cmd1.ExecuteNonQuery();
-                    //string SQLCommand2 = string.Format("UPDATE Berechtigung SET ISRC='{0}',Name='{1}',Länge='{2}' WHERE ISRC='{3}'", Detailview.TextboxISRC.Text, Detailview.TextboxName.Text, Detailview.TextboxLänge.Text, selectedEintrag.ISRC);
-                    //MySqlCommand cmd2 = new MySqlCommand(SQLCommand2, conn);
-                    //cmd2.ExecuteNonQuery();
+                    string SQLCommand2 = string.Format("UPDATE Berechtigung SET BID='{0}',darfarbeitenin='{1}',Ausbildung='{2}' WHERE BID='{3}'", Detailview.TextBoxBID.Text, Detailview.Combodai.Text, Detailview.TextBoxAusbildung.Text, selectedEintrag.BID);
+                    MySqlCommand cmd2 = new MySqlCommand(SQLCommand2, conn);
+                    cmd2.ExecuteNonQuery();
                     laden();
                 }
             }
@@ -140,18 +140,16 @@ namespace Flug_INSY_Projekt_1.Semester
            detailedview Detailview = new detailedview();
            Detailview.ShowDialog();
            if (Detailview.DialogResult == true)
-           {
-                    
+           {         
                     try
                     {
-                        //umschreiben
-                        //----------------------
-                        //string SQLCommand = string.Format("INSERT INTO interpret VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}');", Detailview.TextboxID.Text, Detailview.TextboxInterpret.Text, Detailview.ComboboxTyp.Text, Detailview.TextboxDate.Text, Detailview.ComboboxGenre.Text, Detailview.TextboxLand.Text, Detailview.ComboboxLabel.Text);
-                        //MySqlCommand cmd = new MySqlCommand(SQLCommand, conn);
-                        //cmd.ExecuteNonQuery();
-                        //string SQLCommand2 = string.Format("INSERT INTO aufnahmen VALUES('{0}','{1}','{2}','{3}');", Detailview.TextboxISRC.Text, Detailview.TextboxName.Text, Detailview.TextboxLänge.Text, Detailview.TextboxID.Text);
-                        //MySqlCommand cmd2= new MySqlCommand(SQLCommand2, conn);
-                        //cmd2.ExecuteNonQuery();
+                        string SQLCommand3 = string.Format("INSERT INTO Personal VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", Detailview.ComboGeschlecht.Text, Detailview.TextBoxGeburtsdatum.Text, Detailview.TextBoxVorname.Text, Detailview.TextBoxNachname.Text, Detailview.TextBoxID.Text, Detailview.TextBoxVerNr.Text, Detailview.TextBoxAdresse.Text, Detailview.TextBoxTel.Text, Detailview.ComboRolle.Text);
+                        MySqlCommand cmd3 = new MySqlCommand(SQLCommand3, conn);
+                        cmd3.ExecuteNonQuery();
+
+                        string SQLCommand4 = string.Format("INSERT INTO Berechtigung VALUES('{0}','{1}','{2}','{3}')", Detailview.TextBoxBID.Text, Detailview.Combodai.Text, Detailview.TextBoxAusbildung.Text);
+                        MySqlCommand cmd4 = new MySqlCommand(SQLCommand4, conn);
+                        cmd4.ExecuteNonQuery();
                     }
                     catch (Exception ex)
                     {
@@ -171,20 +169,32 @@ namespace Flug_INSY_Projekt_1.Semester
             
             public int PersID { get; set; }
             public string Geschlecht { get; set; }
-            public string Rolle { get; set; }
+            public string GeburtsDatum { get; set; }
             public string PVorname { get; set; }
             public string PNachname { get; set; }
-            public string GeburtsDatum { get; set; }
+            public string VerNr { get; set; }
             public string PAdresse { get; set; }
             public string PTelNr { get; set; }
-            public string VerNr { get; set; }
+            public string Rolle { get; set; }
             //------------------------------------------
             public int BID { get; set; }
             public string darfarbeitin { get; set;}
             public string Ausbildung { get; set; }
 
         }
-
-
+    
+        private void Disconnect_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                conn.Close();
+                MessageBox.Show("Database disconnected");
+                detailgrid.ItemsSource = null;
+            }
+            catch (Exception s)
+            {
+                MessageBox.Show("Connection Error\r\n" + s.ToString());
+            }
+        }
     }
 }
