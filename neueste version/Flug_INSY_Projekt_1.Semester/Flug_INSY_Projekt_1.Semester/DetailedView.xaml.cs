@@ -39,31 +39,21 @@ namespace Flug_INSY_Projekt_1.Semester
             TextBoxTel.Text = selectedEintrag.PTelNr.ToString();
             TextBoxBID.Text = selectedEintrag.BID.ToString();
             TextBoxAusbildung.Text = selectedEintrag.Ausbildung.ToString();
-            TextBoxBer.Text = selectedEintrag.darfarbeitin.ToString();
+            Combodai.Text = selectedEintrag.darfarbeitin.ToString();
         }
 
         private void comboenumtyp()
         {
-            //ComboboxTyp.Items.Add("Band");
-            //ComboboxTyp.Items.Add("Solo");
-            //ComboboxGenre.Items.Add("Alternative");
-            //ComboboxGenre.Items.Add("Blues");
-            //ComboboxGenre.Items.Add("Classic");
-            //ComboboxGenre.Items.Add("Country");
-            //ComboboxGenre.Items.Add("Dance");
-            //ComboboxGenre.Items.Add("Electronic");
-            //ComboboxGenre.Items.Add("Folk");
-            //ComboboxGenre.Items.Add("Hip-Hop/Rap");
-            //ComboboxGenre.Items.Add("Instrumental");
-            //ComboboxGenre.Items.Add("Jazz");
-            //ComboboxGenre.Items.Add("Pop");
-            //ComboboxGenre.Items.Add("R&B/Soul");
-            //ComboboxGenre.Items.Add("Reggae");
-            //ComboboxGenre.Items.Add("Rock");
-            //ComboboxGenre.Items.Add("Singer/Songwriter");
-            //ComboboxLabel.Items.Add("WMG");
-            //ComboboxLabel.Items.Add("CST");
-            //ComboboxLabel.Items.Add("OLE");
+            ComboGeschlecht.Items.Add("Männlich");
+            ComboGeschlecht.Items.Add("Weiblich");
+            ComboRolle.Items.Add("Pilot");
+            ComboRolle.Items.Add("Kopilot");
+            ComboRolle.Items.Add("Flugbegleiter");
+            Combodai.Items.Add("Airbus 318-100");
+            Combodai.Items.Add("Boeing 777-300");
+            Combodai.Items.Add("Boeing 777-300ER");
+            Combodai.Items.Add("Boeing 777-200 retrofit");
+            Combodai.Items.Add("The Emirates A380");
         }
 
         private void UPDATE_Click(object sender, RoutedEventArgs e)
