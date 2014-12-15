@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Flug_INSY_Projekt_1.Semester.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="PersonalDB GUI" Height="308" Width="1030">
+        Title="PersonalDB GUI" Height="308" Width="1030" Icon="./Icons/usericon_new.ico">
     <Grid Margin="0,0,2,1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="427*"/>
